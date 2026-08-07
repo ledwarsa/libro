@@ -1,23 +1,110 @@
 export default {
     template: `
-        <section id="resena" class="section section-gray">
+        <!-- Review / Reseña section (compact) -->
+        <section id="resena" class="section section-alt">
             <div class="container">
-                <h2 class="review-title">Reseña del Libro</h2>
-                <div class="review-body text-center">
-                    <p>“Los Niños del Viento: Afrontando el Abuso Sexual Infantil” es un libro inspirado en la lucha contra el abuso sexual infantil (ASI) y la experiencia de más de una década de trabajo desarrollado por las autoras-compiladoras Alexandra Moreno Piraquive y Lisa Marie Wills Moreno. En sus páginas, el lector encontrará información que ha sido investigada, reunida y compilada desde los inicios de la Fundación Red.</p>
-                    <p>Es una completa obra en la que se recopilan herramientas pedagógicas para niños, niñas y adolescentes creadas por la fundación, leyes para la prevención de este delito en Colombia impulsadas por su fundadora y otros elementos que resultarán de gran utilidad para el lector. Memorias, testimonios, cifras y datos, permitirán entender el fenómeno del ASI de una manera sencilla y la importancia de ser un agente activo en lucha contra este fenómeno.</p>
-                    <p>El libro ha sido elaborado con la estructura de un manual de instrucciones, en el que la Autora habla en primera persona como madre, mujer y ciudadana, con un lenguaje empático y didáctico. Tanto padres de familia como cuidadores, profesionales involucrados con la infancia y la adolescencia, y demás personas interesadas en el tema, podrán encontrar en sus 350 páginas una completa herramienta que ayudará a la prevención, detección y denuncia de este delito.</p>
-                    <p>Contiene además ilustraciones y gráficas pedagógicas en las que se evidencia el valor e importancia de educarse en temas de violencia sexual en menores de edad. Estas fueron diseñadas con el objetivo de reconocer si un NNA es víctima de abuso, enseñar las pautas para la prevención del delito, saber cómo responder ante la revelación de un niño víctima, así como entender las vías de acceso a la justicia y el proceso judicial, con un lenguaje ameno y claro.</p>
-                    <p>Ciertamente, el contenido es enriquecido con los aportes de profesionales afines a la temática, especializados en diferentes áreas del conocimiento que nos comparten acerca del perfil del agresor, las consecuencias neurológicas del maltrato en menores de edad, la importancia de la prevención en el hogar, formas de maltrato, entre otros. Adicionalmente, incluye juegos en línea diseñados con el fin de reforzar los conocimientos en la materia.</p>
-                    <p>“Los Niños del Viento: Afrontando el Abuso Sexual Infantil”, a través de inspiradoras historias y utilizando el conocimiento brindado por la Fundación Red, busca generar un impacto positivo en la defensa de los niños, niñas y adolecentes.  Es una pieza fundamental con la que todos podemos convertirnos en un escudo protector en contra de los agresores, que arrebatan la alegría de niños y niñas, pues llegan como el viento, inicialmente imperceptible, en secreto ruge, se aleja, y nadie lo ve.</p>
-                    <div class="review-action">
-                        <a :href="whatsappLink" class="btn-whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Quiero adquirir el libro
+                <div class="review-layout">
+                    <div class="review-content">
+                        <span class="section-label">Reseña oficial</span>
+                        <h2>Un escudo protector para cada niño de Colombia</h2>
+                        <p class="review-quote">
+                            "Llegan como el viento, inicialmente imperceptible, en secreto ruge,
+                            se aleja, y nadie lo ve…"
+                        </p>
+                        <ul class="review-bullets">
+                            <li><i class="fas fa-check"></i> Cifras, datos y testimonios reales que explican el fenómeno del ASI de forma sencilla</li>
+                            <li><i class="fas fa-check"></i> Manual estructurado para leer como guía paso a paso en cualquier situación</li>
+                            <li><i class="fas fa-check"></i> Alexandra Moreno habla como madre, mujer y ciudadana: un lenguaje que conecta</li>
+                            <li><i class="fas fa-check"></i> 350 páginas que pueden cambiar la vida de un niño para siempre</li>
+                        </ul>
+                        <a :href="whatsappLink" class="btn btn-wa" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> Quiero mi libro ahora
                         </a>
+                    </div>
+                    <div class="review-image">
+                        <img src="assets/images/dra-libro-2.png" alt="Reseña del libro Los Niños del Viento">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Pricing / Formats -->
+        <section id="formatos" class="section">
+            <div class="container text-center">
+                <span class="section-label">¿Cómo adquirirlo?</span>
+                <h2>Elige tu formato preferido</h2>
+                <p style="max-width:520px; margin:0 auto;">
+                    Escríbenos por WhatsApp y en minutos coordinamos tu pedido.
+                    Enviamos a todo Colombia con métodos de pago fáciles.
+                </p>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-icon">📱</div>
+                        <h3>Libro Digital</h3>
+                        <p class="pricing-desc">Recíbelo al instante por WhatsApp o Email</p>
+                        <div class="pricing-price">
+                            <span class="price-amount">$61.000</span>
+                            <span class="price-currency">COP</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> PDF de alta calidad</li>
+                            <li><i class="fas fa-check-circle"></i> Entrega inmediata</li>
+                            <li><i class="fas fa-check-circle"></i> Lee en cualquier dispositivo</li>
+                            <li><i class="fas fa-check-circle"></i> Pago por Nequi o Daviplata</li>
+                        </ul>
+                        <a :href="whatsappDigital" class="btn btn-wa" target="_blank" rel="noopener" style="width:100%">
+                            <i class="fab fa-whatsapp"></i> Pedir versión digital
+                        </a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge-top">⭐ Más vendido</div>
+                        <div class="pricing-icon">📗</div>
+                        <h3>Libro Físico</h3>
+                        <p class="pricing-desc">Impreso y enviado a tu puerta en todo Colombia</p>
+                        <div class="pricing-price">
+                            <span class="price-amount">$61.000</span>
+                            <span class="price-currency">COP</span>
+                            <span class="price-note">+ envío</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> Edición impresa de calidad</li>
+                            <li><i class="fas fa-check-circle"></i> Envío a todo el territorio nacional</li>
+                            <li><i class="fas fa-check-circle"></i> Pago rápido y seguro con Bre-B</li>
+                            <li><i class="fas fa-check-circle"></i> Apoya a la Fundación Red con tu compra</li>
+                        </ul>
+                        <a :href="whatsappFisico" class="btn btn-wa btn-wa-pulse" target="_blank" rel="noopener" style="width:100%">
+                            <i class="fab fa-whatsapp"></i> Pedir libro físico
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Trust badges -->
+                <div class="cta-band" style="margin-top: 48px; border-radius: 20px; padding: 36px 24px;">
+                    <div class="trust-row">
+                        <div class="trust-badge"><i class="fas fa-truck"></i> Envío seguro a Colombia</div>
+                        <div class="trust-badge pay-trust-breb">
+                            <img src="assets/images/logo-bre-b.png" alt="Bre-B" class="trust-pay-logo">
+                        </div>
+                        <div class="trust-badge"><i class="fas fa-heart"></i> Apoya la Fundación Red</div>
                     </div>
                 </div>
             </div>
         </section>
     `,
-    props: ['whatsappLink']
+    props: ['whatsappLink'],
+    computed: {
+        whatsappDigital() {
+            const num = '573042916654';
+            const msg = encodeURIComponent('Hola quiero comprar mi libro.');
+            return `https://wa.me/c/${num}?text=${msg}`;
+        },
+        whatsappFisico() {
+            const num = '573042916654';
+            const msg = encodeURIComponent('Hola quiero comprar mi libro.');
+            return `https://wa.me/c/${num}?text=${msg}`;
+        }
+    }
 }
