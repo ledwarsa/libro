@@ -2,28 +2,28 @@ import { ref } from 'vue';
 
 export default {
     template: `
-        <header class="site-header">
+        <header class="site-header" :class="{ visible: isVisible }">
             <div class="container header-inner">
-                <div class="logo">
-                    <a href="#inicio">
-                        <img src="assets/images/cropped-logo-site-1.png" alt="Logo Fundación Red">
-                    </a>
-                </div>
-                
-                <button class="mobile-toggle" @click="isMenuOpen = !isMenuOpen">
-                    <i class="fas" :class="isMenuOpen ? 'fa-times' : 'fa-bars'"></i>
-                </button>
+                <a href="#inicio" class="logo">
+                    <img src="assets/images/cropped-logo-site-1.png" alt="Logo Fundación Red">
+                </a>
 
                 <nav class="main-nav" :class="{ 'is-open': isMenuOpen }">
                     <ul @click="isMenuOpen = false">
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#sobre-el-libro">El Libro</a></li>
+                        <li><a href="#que-encontraras">El Libro</a></li>
                         <li><a href="#autores">Autores</a></li>
-                        <li><a href="#resena">Reseña</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#preguntas">FAQ</a></li>
                     </ul>
                 </nav>
-                <div class="cta" :class="{ 'is-open': isMenuOpen }">
-                    <a :href="whatsappLink" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Adquirir Ahora</a>
+
+                <div class="header-right">
+                    <a :href="whatsappLink" class="btn btn-wa header-cta" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> Comprar ahora
+                    </a>
+                    <button class="mobile-toggle" @click="isMenuOpen = !isMenuOpen" aria-label="Menú">
+                        <i class="fas" :class="isMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+                    </button>
                 </div>
             </div>
         </header>
@@ -31,6 +31,16 @@ export default {
     props: ['whatsappLink'],
     setup() {
         const isMenuOpen = ref(false);
-        return { isMenuOpen };
+        const isVisible  = ref(false);
+
+        if (typeof window !== 'undefined') {
+            window.addEventListener('scroll', () => {
+                // Only show after the full hero (100vh) has scrolled out
+                isVisible.value = window.scrollY > (window.innerHeight - 72);
+                if (!isVisible.value) isMenuOpen.value = false;
+            }, { passive: true });
+        }
+
+        return { isMenuOpen, isVisible };
     }
 }
